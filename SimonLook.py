@@ -6,11 +6,15 @@
 from guizero import App, Picture, PushButton, Box, Text
 import random
 
+# directories
+
+fonts = './assets/fonts/'
+img = './assets/img/'
 
 widget = []  # list of widget created
 quiz = []  # list of generated pics
 answers = []  # list of button pressed by the user
-monsters = ["monster1.png", "monster2.png", "monster3.png", "monster4.png"]
+monsters = [f"{img}monster1.png", f"{img}monster2.png", f"{img}monster3.png", f"{img}monster4.png"]
 points = 0  # score counter
 
 # --------------- defined functions ---------------
@@ -179,7 +183,7 @@ def main():
     # widget 1
     widget.append(box1)
 
-    simonLogo = Picture(simonLook, image="simon2.png", grid=[0, 1])
+    simonLogo = Picture(simonLook, image=f"{img}simon2.png", grid=[0, 1])
     # widget 2
     widget.append(simonLogo)
 
@@ -187,7 +191,7 @@ def main():
     # widget 3
     widget.append(box2)
 
-    startBtn = PushButton(simonLook, image="startBtn.png", grid=[0, 4])
+    startBtn = PushButton(simonLook, image=f"{img}startBtn.png", grid=[0, 4])
     # widget 4
     widget.append(startBtn)
     startBtn.update_command(command=dsplyPage, args=[points])
@@ -199,7 +203,7 @@ def main():
     # widget 5
     widget.append(box3)
 
-    simon = Picture(simonLook, image="simon2.png", width=300, height=300, grid=[0, 1])
+    simon = Picture(simonLook, image=f"{img}simon2.png", width=300, height=300, grid=[0, 1])
     simon.hide()
     # widget 6
     widget.append(simon)
@@ -213,10 +217,10 @@ def main():
     # widget 8
     widget.append(box5)
 
-    monBtn_1 = PushButton(simonLook, image="monster1.png", grid=[0, 1])
-    monBtn_2 = PushButton(simonLook, image="monster2.png", grid=[0, 3])
-    monBtn_3 = PushButton(simonLook, image="monster3.png", grid=[1, 1])
-    monBtn_4 = PushButton(simonLook, image="monster4.png", grid=[1, 3])
+    monBtn_1 = PushButton(simonLook, image=f"{img}monster1.png", grid=[0, 1])
+    monBtn_2 = PushButton(simonLook, image=f"{img}monster2.png", grid=[0, 3])
+    monBtn_3 = PushButton(simonLook, image=f"{img}monster3.png", grid=[1, 1])
+    monBtn_4 = PushButton(simonLook, image=f"{img}monster4.png", grid=[1, 3])
     monBtn_1.hide()
     monBtn_2.hide()
     monBtn_3.hide()
@@ -231,9 +235,9 @@ def main():
     # score board (17-18)
     box8 = Box(simonLook, width=350, height=50, grid=[0, 4, 2, 1])
     box8.hide()
-    scoreboard = Picture (simonLook, image="scoreboard.png", grid=[0, 5, 2, 1])
+    scoreboard = Picture (simonLook, image=f"{img}scoreboard.png", grid=[0, 5, 2, 1])
     scoreboard.hide()
-    score = Text(simonLook, text=points, font="LuloCleanW01-OneBold", grid=[0, 5, 2, 1])
+    score = Text(simonLook, text=points, font=f"{fonts}LuloCleanW01-OneBold", grid=[0, 5, 2, 1])
     score.text_size = 20
     score.text_color = "white"
     score.bg = "#2C3E50"
@@ -245,7 +249,7 @@ def main():
     widget.append(box6)
     box6.hide()
 
-    gameoverPic = Picture(simonLook, image="gameovertext.png", grid=[0, 1])
+    gameoverPic = Picture(simonLook, image=f"{img}gameovertext.png", grid=[0, 1])
     # widget 14
     widget.append(gameoverPic)
     gameoverPic.hide()
@@ -255,7 +259,7 @@ def main():
     widget.append(box7)
     box7.hide()
 
-    playAgainBtn = PushButton(simonLook, image="playagain.png", grid=[0, 3])
+    playAgainBtn = PushButton(simonLook, image=f"{img}playagain.png", grid=[0, 3])
     # widget 16
     widget.append(playAgainBtn)
     playAgainBtn.hide()
